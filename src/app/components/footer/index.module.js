@@ -1,5 +1,5 @@
-import footerComponent from './footer.component'
-import './footer.scss'
+import footerComponent from './index.component'
+import './index.scss'
 
 const footerModule = angular.module('footer-module', [])
 

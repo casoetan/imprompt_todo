@@ -1,4 +1,4 @@
-import filtersTpl from './filters.html'
+import filtersTpl from './index.html'
 
 function filtersComponent ($log) {
   'ngInject'

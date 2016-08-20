@@ -1,5 +1,5 @@
-import filtersDirective from './filters.directive'
-import './filters.scss'
+import filtersDirective from './index.directive'
+import './index.scss'
 
 const filtersModule = angular.module('filters-module', [])
 

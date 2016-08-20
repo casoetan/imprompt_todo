@@ -1,4 +1,4 @@
-import footerTpl from './footer.html'
+import footerTpl from './index.html'
 
 function footerComponent ($log) {
   'ngInject'
