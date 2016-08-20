@@ -1,11 +1,11 @@
 <ul class="todo">
   <li data-ng-repeat="todo in todos.list" class="todo__item" data-ng-class="{'todo__item--done': todo.done}">
     <input
-      id={{todo.id}}
-      class='js_toggle_todo'
-      type='checkbox'
-      data-id={{todo.id}}
+      id="{{todo.id}}"
+      class="js_toggle_todo"
+      type="checkbox"
+      data-id="{{todo.id}}"
       data-ng-checked="todo.done" />
-    <label class='js_toggle_todo_label' for={{todo.id}}>{{todo.text}}</label>
+    <label class="js_toggle_todo_label" for="{{todo.id}}">{{todo.text}}</label>
   </li>
 </ul>

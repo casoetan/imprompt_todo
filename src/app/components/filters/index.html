@@ -2,13 +2,13 @@
   <div id="filterTodo">
       <span data-ng-repeat="filterLabel in todoFilters.availableFilters">
         <input
-            id={{filterLabel}}
-            class='filter_radio'
-            type='radio'
-            name='filterTodo'
-            value={{filterLabel}}
-            checked={{vm.filter === label ? true : undefined}} />
-        <label class='filter_radio_label' for={{filterLabel}}>{{filterLabel}}</label>
+            id="{{filterLabel}}"
+            class="filter_radio"
+            type="radio"
+            name="filterTodo"
+            value="{{filterLabel}}"
+            data-ng-checked="todoFilters.filter === filterLabel" />
+        <label class="filter_radio_label" for="{{filterLabel}}">{{filterLabel}}</label>
       </span>
   </div>
 </div>
