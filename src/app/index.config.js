@@ -1,9 +1,10 @@
-function config($logProvider) {
-	'ngInject';
+import reducers from './redux/reducers'
 
-  // Enable log
-  $logProvider.debugEnabled(true);
+function config($logProvider, $ngReduxProvider) {
+	'ngInject'
 
+  $logProvider.debugEnabled(true)
+  $ngReduxProvider.createStoreWith(reducers)
 }
 
 export default config;

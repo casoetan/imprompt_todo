@@ -1,9 +1,7 @@
 import config from './index.config'
 import run from './index.run'
 
-import coreModule from './core/core.module'
 import componentsModule from './index.components'
-import routesModule from './index.routes'
 import mainPageModule from './pages/main/main.module'
 
 const App = angular.module(
@@ -17,9 +15,8 @@ const App = angular.module(
     'ngMessages',
     'ngAria',
     'oc.lazyLoad',
-    coreModule.name,
+    'ngRedux',
     componentsModule.name,
-    routesModule.name,
     mainPageModule.name,
   ]
 )

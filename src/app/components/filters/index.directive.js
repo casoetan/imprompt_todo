@@ -1,6 +1,8 @@
 import filtersTpl from './index.html'
 
-function filtersComponent ($log) {
+import { filterTodo } from '../../redux/actions'
+
+function filtersComponent () {
   'ngInject'
 
   var directive = {
@@ -13,10 +15,15 @@ function filtersComponent ($log) {
 
   return directive
 
-  function FiltersController () {
+  function FiltersController ($scope, $ngRedux) {
+    let unsubscribe = $ngRedux.connect(undefined, { filterTodo })(this);
+    $scope.$on('$destroy', unsubscribe);
+
     let todoFilters = this
     todoFilters.filter = 'all'
     todoFilters.availableFilters = ['all', 'open', 'closed']
+
+    this.applyFilters = filter => this.filterTodo(filter)
   }
 }
 

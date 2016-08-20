@@ -1,8 +1,5 @@
-function MainController($log) {
+function MainController() {
   'ngInject';
-
-  $log.debug('Hello from main controller!');
-
 }
 
 export default MainController;

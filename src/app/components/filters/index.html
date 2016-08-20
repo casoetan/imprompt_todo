@@ -6,6 +6,8 @@
             class="filter_radio"
             type="radio"
             name="filterTodo"
+            data-ng-model="todoFilters.radio"
+            data-ng-change="todoFilters.applyFilters(filterLabel)"
             value="{{filterLabel}}"
             data-ng-checked="todoFilters.filter === filterLabel" />
         <label class="filter_radio_label" for="{{filterLabel}}">{{filterLabel}}</label>

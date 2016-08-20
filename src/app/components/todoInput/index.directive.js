@@ -1,6 +1,8 @@
 import indexTpl from './index.html'
 
-function todoInputComponent ($log) {
+import { addTodo } from '../../redux/actions'
+
+function todoInputComponent () {
   'ngInject'
 
   var directive = {
@@ -13,8 +15,21 @@ function todoInputComponent ($log) {
 
   return directive
 
-  function TodoInputController () {
-    $log.debug('Hello from todoInput controller!')
+  function TodoInputController ($scope, $ngRedux) {
+    let unsubscribe = $ngRedux.connect(undefined, { addTodo })(this);
+    $scope.$on('$destroy', unsubscribe);
+
+    this.onKeydown = event => event.code === 'Enter' ? this.newTodo() : undefined
+
+    this.newTodo = () => {
+      const todoText = this.text
+      this.text = ''
+      return this.addTodo({
+        id: Date.now(),
+        text: todoText,
+        done: false
+      })
+    }
   }
 }
 

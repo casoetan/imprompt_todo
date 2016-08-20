@@ -7,7 +7,5 @@ import "./index.module";
 import "../assets/styles/sass/index.scss";
 
 angular.element(document).ready(function () {
-  angular.bootstrap(document, ['AdjustTodo'], {
-    strictDi: true
-  });
+  angular.bootstrap(document, ['AdjustTodo'])
 });

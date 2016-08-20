@@ -1,4 +1,9 @@
 <div class="todo__input">
-  <input type="text" id="todoInput" placeholder="What do you want to get done?" />
-  <button id="addTodo">Add</button>
+  <input
+    type="text"
+    id="todoInput"
+    data-ng-model="todoInput.text"
+    data-ng-keydown="todoInput.onKeydown($event)"
+    placeholder="What do you want to get done?" />
+  <button id="addTodo" data-ng-click="todoInput.newTodo()">Add</button>
 </div>

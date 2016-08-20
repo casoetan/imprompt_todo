@@ -1,5 +1,7 @@
 import indexTpl from './index.html'
 
+import { toggleTodoState } from '../../redux/actions'
+
 function todoListComponent ($log) {
   'ngInject'
 
@@ -13,16 +15,26 @@ function todoListComponent ($log) {
 
   return directive
 
-  function TodoListController () {
-    let todos = this
+  function TodoListController ($scope, $ngRedux) {
+    let unsubscribe = $ngRedux.connect(mapStateToThis, { toggleTodoState})(this)
+    $scope.$on('$destroy', unsubscribe)
 
-    todos.list = [
-      { id: 1, text: 'A first', done: true },
-      { id: 2, text: 'A second', done: true },
-      { id: 3, text: 'A third', done: false },
-      { id: 4, text: 'A fourth', done: true },
-      { id: 5, text: 'A fifth', done: false }
-    ]
+    function mapStateToThis (state) {
+      const activeTodos = state.todos.filter(todo => {
+        switch (state.filter) {
+          case 'open':
+            return !todo.done ? todo : false
+          case 'closed':
+            return todo.done ? todo : false
+          default:
+            return todo
+        }
+      })
+
+      return { list: activeTodos }
+    }
+
+    this.toggleTodo = todo => this.toggleTodoState(todo.id)
   }
 }
 
