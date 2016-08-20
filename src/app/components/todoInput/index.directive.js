@@ -7,7 +7,7 @@ function todoInputComponent ($log) {
     restrict: 'E',
     templateUrl: indexTpl,
     controller: TodoInputController,
-    controllerAs: 'vm',
+    controllerAs: 'todoInput',
     bindToController: true
   }
 

@@ -7,7 +7,7 @@ function footerComponent ($log) {
     restrict: 'E',
     templateUrl: footerTpl,
     controller: FooterController,
-    controllerAs: 'vm',
+    controllerAs: 'todoFooter',
     bindToController: true
   }
 

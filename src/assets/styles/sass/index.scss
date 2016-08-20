@@ -1,11 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-
+@import 'app';
 
 html { height: 100%; }
 body {
   min-height: 100%;
   position: relative;
   padding-bottom: 60px;
+}
+
+html, body {
+    display: flex;
+    margin: 0 auto;
+    background-color: #E4E7F2;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    color: #AF5C6C;
+    font-weight: 100;
+}
+
+input {
+    font-size: 1.2rem;
+    color: #8F9AC8;
+    &[type="text"] {
+        padding: 0.4rem;
+        border: none;
+        border-bottom: solid 1px #C2C8E1;
+        transition: border 0.3s;
+        &:focus {
+            outline: none;
+            border-bottom: solid 1px #6D7BB7;
+        }
+    }
 }

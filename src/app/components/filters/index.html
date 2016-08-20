@@ -1,3 +1,14 @@
 <div class="container">
-  <p class="text-muted">The filters directive</p>
+  <div id="filterTodo">
+      <span data-ng-repeat="filterLabel in todoFilters.availableFilters">
+        <input
+            id={{filterLabel}}
+            class='filter_radio'
+            type='radio'
+            name='filterTodo'
+            value={{filterLabel}}
+            checked={{vm.filter === label ? true : undefined}} />
+        <label class='filter_radio_label' for={{filterLabel}}>{{filterLabel}}</label>
+      </span>
+  </div>
 </div>

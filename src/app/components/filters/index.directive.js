@@ -7,14 +7,16 @@ function filtersComponent ($log) {
     restrict: 'E',
     templateUrl: filtersTpl,
     controller: FiltersController,
-    controllerAs: 'vm',
+    controllerAs: 'todoFilters',
     bindToController: true
   }
 
   return directive
 
   function FiltersController () {
-    $log.debug('Hello from filters controller!')
+    let todoFilters = this
+    todoFilters.filter = 'all'
+    todoFilters.availableFilters = ['all', 'open', 'closed']
   }
 }
 
