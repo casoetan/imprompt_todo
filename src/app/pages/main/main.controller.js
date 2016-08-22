@@ -1,5 +1,5 @@
 function MainController() {
-  'ngInject';
+  'ngInject'
 }
 
 export default MainController;

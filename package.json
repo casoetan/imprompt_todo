@@ -18,8 +18,7 @@
     "angular-ui-router": "^0.3.1",
     "es6-promise": "^3.0.2",
     "ng-redux": "^3.4.0-beta.1",
-    "oclazyload": "^1.0.9",
-    "url": "^0.11.0"
+    "oclazyload": "^1.0.9"
   },
   "devDependencies": {
     "node-sass": "^3.4.2",

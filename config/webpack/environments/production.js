@@ -1,7 +1,8 @@
-'use strict';
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+'use strict'
+var webpack = require("webpack")
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 
-module.exports = function(_path) {
+module.exports = function (_path) {
   return {
     context: _path,
     debug: false,
@@ -15,7 +16,10 @@ module.exports = function(_path) {
         root: _path,
         verbose: true,
         dry: false
+      }),
+      new webpack.DefinePlugin({
+        'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production') }
       })
     ]
-  };
-};
+  }
+}
